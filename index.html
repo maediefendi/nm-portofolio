@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <title>Maedi Efendi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+
+
+    
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .layar-penuh {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    video {
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .intro {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      text-align: center;
+      color: white;
+      max-width: 700px;
+    }
+
+    .tombol {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      background: #0a3d62;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    .navbar-nav .nav-link {
+      color: white !important;
+      font-weight: 500;
+    }
+    section.quote {
+    background: url('/asset/glowing-blue-sphere-held-by-human-hand-generated-by-ai.jpg') no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-style: italic;
+    padding: 100px;
+    }
+    #contact {
+  padding: 3rem;
+}
+
+
+.contact.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+}
+
+.contact-left {
+  padding: 1rem;
+}
+
+.contact-form div {
+  margin-bottom: 1.4rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1.3rem;
+  font-family: "Roboto", sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #f9f9f9;
+  color: #333;
+  resize: none;
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: #9d9fa1;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border: 1.5px solid #0a3d62;
+}
+
+.btn-submit {
+  padding: 0.75rem 1.5rem;
+  width: 100%;
+  background-color: #0a3d62;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-submit:hover {
+  background-color: #002036;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 1.5rem;
+}
+
+.contact-item-icon {
+  margin-right: 1rem;
+  background: #0a3d62;
+  width: 53px;
+  height: 53px;
+  border-radius: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-item-detail h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.contact-item-detail p {
+  margin: 0.25rem 0 0 0;
+}
+.footer {
+    margin-top: 100px;
+    padding-bottom: 20px;
+}
+
+.footer-box .row .col:nth-child(2) a {
+    opacity: 75%;
+}
+
+.footer-box .row .col:nth-child(2) a:hover {
+    opacity: 100%;
+}
+.bg-blue-dark {
+  background-color: #0a3d62; /* biru navy gelap */
+}
+.contact-item-icon {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.contact-item-icon:hover {
+  animation: shake 0.5s ease infinite;
+}
+.bi-facebook:hover { color: #044ff3; }
+.bi-instagram:hover { color: #044ff3; }
+.bi-linkedin:hover { color: #044ff3; }
+.bi-github:hover { color: #044ff3; }
+
+.education {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.education:hover {
+  transform: translateY(-5px); /* Naik sedikit */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Bayangan lebih tebal */
+  border-color: #0a3d62; /* Garis border biru (Bootstrap primary) */
+}
+.education img {
+  transition: transform 0.3s ease;
+}
+
+.education:hover img {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+/* Style dasar untuk card experience */
+#experience .col-md-8 {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 2px solid transparent;
+}
+
+/* Efek hover */
+#experience .col-md-8:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: #0a3d62; /* Bisa disesuaikan warnanya */
+}
+/* Normal appearance */
+.navbar-toggler {
+  background-color: white; /* Atur warna tombol saat belum dibuka */
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/* Saat navbar dibuka, ubah jadi transparan */
+.navbar-toggler.active {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.navbar-toggler.active .navbar-toggler-icon {
+  background-image: none; /* sembunyikan ikon default */
+}
+
+/* Tambahkan garis bawah di setiap item menu hanya di tampilan mobile */
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* garis aris */
+    padding: 3px 0;
+  }
+
+  .navbar-nav .nav-link {
+    color: white;
+  }
+}
+
+
+
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-3px); }
+}
+
+
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-blue-dark py-3 fixed-top animate__animated animate__fadeInDown">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center text-white fw-bold" href="#home">
+        <img src="./asset/Gambar WhatsApp 2025-03-10 pukul 20.39.55_e165f00b.jpg" alt="Logo" width="40" height="40" class="rounded-circle me-2" />
+        Maedi Efendi
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <button class="navbar-toggler" id="burgerToggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+
+  <!-- Header -->
+  <div class="layar-penuh" id="home">
+    <header>
+      <div class="overlay"></div>
+      <video autoplay muted loop class="position-absolute w-100 h-100">
+        <source src="./asset/lv_0_20250525093917.mp4" type="video/mp4" />
+      </video>
+      <div class="intro">
+        <h3 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Transformasi Data Menjadi Insight Bernilai</h3>
+        <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">mengubah kumpulan data mentah yang tidak terstruktur menjadi informasi yang akurat, relevan, dan mudah dipahami. Dengan pendekatan analisis yang teliti dan teknik pengolahan data yang tepat, saya memastikan setiap data yang dikumpulkan memberikan wawasan yang bisa diandalkan untuk pengambilan keputusan strategis. Data bukan sekadar angka—melainkan aset penting yang mampu mendorong efisiensi, inovasi, dan pertumbuhan bisnis.</p>
+        <a href="#about" class="tombol" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">MORE INFO</a>
+      </div>
+    </header>
+  </div>
+
+  <!-- About -->
+  <section id="about" class="bg-light">
+  <div class="container text-center">
+    <img src="./asset/customer-service.png" alt="About Icon" style="width: 120px;" class="img-fluid mb-4" data-aos="fade-up" data-aos-duration="1000" />
+    <h1 data-aos="fade-up" data-aos-duration="1000" class="fw-bold">About</h1>
+    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+      Individu dengan pengalaman 1 tahun dalam pengolahan dan pengelolaan data, serta kemampuan dalam memvisualisasikan data untuk keperluan analisis. Mahir dalam menggunakan berbagai perangkat lunak pengolahan data seperti Microsoft Excel dan Google Sheets. Memiliki tingkat ketelitian dan kecepatan yang tinggi dalam penginputan data, serta terbiasa bekerja di bawah tekanan dengan tetap menjaga akurasi pada data dalam jumlah besar. Mempunyai keterampilan komunikasi yang baik dan mampu bekerja secara mandiri maupun dalam tim.
+    </p>
+  </div>
+</section>
+
+  <!-- Services -->
+  <section id="services" class="py-5">
+  <div class="container text-center">
+    <div class="services-box">
+      <h1 data-aos="fade-up" data-aos-duration="1000" class="mb-3 fw-bold">Services</h1>
+      <p class="mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Kami menyediakan layanan dalam pengolahan dan visualisasi data untuk membantu menyajikan informasi secara jelas dan mudah dipahami. Selain itu, kami juga menawarkan pengembangan web dasar sebagai solusi digital yang mendukung penyampaian data dan informasi secara interaktif, efektif, dan terstruktur. Setiap layanan dirancang untuk memberikan nilai tambah bagi individu maupun organisasi yang membutuhkan pemanfaatan data secara optimal.
+      </p>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div data-aos="fade-up" data-aos-duration="1000" class="service p-4 shadow bg-blue-dark text-white rounded-4 h-100">
+            <img src="./asset/Data analysis-amico (1).png" alt="" class="img-fluid mb-3" data-aos="zoom-in" data-aos-duration="1000" />
+            <h4 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="mb-3 fw-bold">Pengolahan Data</h4>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="lh-lg">Mengolah data mentah menjadi informasi yang siap dianalisis menggunakan tools dasar seperti Excel dan Google Sheets.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div data-aos="fade-up" data-aos-duration="1000" class="service p-4 shadow bg-blue-dark text-white rounded-4 h-100">
+            <img src="./asset/Data extraction-amico (1).png" alt="" class="img-fluid mb-3" data-aos="zoom-in" data-aos-duration="1000" />
+            <h4 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="mb-3 fw-bold">Visualisasi Data</h4>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="lh-lg">Membuat grafik dan dashboard sederhana menggunakan Excel, atau Google Data Studio untuk menyampaikan data secara visual.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div data-aos="fade-up" data-aos-duration="1000" class="service p-4 shadow bg-blue-dark text-white rounded-4 h-100">
+            <img src="./asset/Programming-amico.png" alt="" class="img-fluid mb-3" data-aos="zoom-in" data-aos-duration="1000" />
+            <h4 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="mb-3 fw-bold">Web Development</h4>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="lh-lg">Membangun halaman web sederhana menggunakan HTML, CSS, JavaScript dan template dasar Bootstrap untuk keperluan portofolio atau profil.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Experience -->
+<section id="experience" class="bg-light">
+  <div class="container text-center py-5">
+    <h1 data-aos="fade-up" data-aos-duration="1000" class="mb-4 fw-bold">Experience</h1>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8 bg-light p-4 rounded shadow">
+        <h4 class="mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"class="fw-bold">Data Entry Staff – CV. Kahe Group</h4>
+        <p class="mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"class="text-muted mb-2">Juli 2024 – Juli 2025</p>
+        <p class="mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"class="lh-lg">
+          Bertanggung jawab dalam menginput data menggunakan Microsoft Excel dan Google Sheets, memastikan ketelitian dan kecepatan dalam pengolahan data. Bekerja sama dengan tim analis untuk menyusun laporan sederhana, serta terbiasa bekerja di bawah tekanan dengan tetap menjaga akurasi data.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- Education -->
+<section id="education" class="py-5 bg-light">
+  <div class="container text-center">
+    <div class="education-box">
+      <h1 data-aos="fade-up" data-aos-duration="1000" class="mb-3 fw-bold">Education</h1>
+
+      <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"class="mb-5">Berikut adalah riwayat pendidikan formal yang telah saya tempuh, mencakup jenjang pendidikan menengah hingga perguruan tinggi. Pendidikan ini telah membentuk dasar keilmuan dan keterampilan saya dalam bidang analisis data, pengembangan web, serta pemahaman sosial-ekonomi yang kuat.
+
+</p>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="education p-4 shadow bg-white text-dark rounded-4 h-100">
+            <img src="./asset/logo-ut-small-transparent-300x226.png.webp" alt="Graduation Icon" class="img-fluid mb-3" style="max-height: 80px;" data-aos="fade-up" data-aos-duration="1000" />
+            <h4 data-aos="fade-up" data-aos-duration="1500"class="mb-2 fw-bold">Universitas Terbuka</h4>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"class="text-muted mb-1">Sains Data</p>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"class="text-muted mb-3">2025 – Sekarang</p>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="lh-lg">Mahasiswa baru di bidang Sains Data dengan kemampuan dalam pengolahan dan visualisasi data menggunakan Excel, dan Google Sheets, serta dasar-dasar pengembangan web menggunakan HTML, CSS, dan JavaScript.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="education p-4 shadow bg-white text-dark rounded-4 h-100">
+            <img src="./asset/images-removebg-preview.png" alt="Graduation Icon" class="img-fluid mb-3" style="max-height: 80px;" data-aos="fade-up" data-aos-duration="1000" />
+            <h4 data-aos="fade-up" data-aos-duration="1500"class="mb-2 fw-bold">Sman 1 Jamblang</h4>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"class="text-muted mb-1">Ilmu Pengetahuan Sosial</p>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"class="text-muted mb-3">2021 – 2024</p>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="lh-lg">Menyelesaikan pendidikan di jurusan Ilmu Pengetahuan Sosial (IPS) dengan fokus pada bidang ekonomi, sosiologi, dan geografi. Lulus dengan nilai akhir <strong>87,34</strong>, mencerminkan dedikasi akademis yang kuat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Galery -->
+ <section class="quote">
+    <div class="layar-dalam">
+        <p>"Visualisasi yang baik bisa membuat data berbicara lebih keras daripada kata-kata."</p>
+    </div>
+ </section>
+
+
+  <!-- Contact -->
+  <section id="contact">
+  <div class="contact main-container">
+    <div class="contact-left">
+      <form class="contact-form" action="https://formspree.io/f/mldbybde" method="POST" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+        <div>
+          <input type="text" placeholder="Name" name="name">
+        </div>
+        <div>
+          <input type="email" placeholder="Email" name="email">
+        </div>
+        <div>
+          <textarea name="message" id="message" placeholder="Message" cols="30" rows="10"></textarea>
+        </div>
+        <button class="btn-submit">Send Message</button>
+      </form>
+    </div>
+
+    <div class="contact-right">
+      <!-- Address -->
+      <div class="contact-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+        <div class="contact-item-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="white" d="M12 1c-3.148 0-6 2.553-6 5.702 0 3.148 2.602 6.907 6 12.298 3.398-5.391 6-9.15 6-12.298 0-3.149-2.851-5.702-6-5.702zm0 8c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z"/>
+          </svg>
+        </div>
+        <div class="contact-item-detail">
+          <h4>Address</h4>
+          <p>Slangit, Klangenan, Cirebon 45156</p>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="contact-item"data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+        <div class="contact-item-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="white" d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/>
+          </svg>
+        </div>
+        <div class="contact-item-detail">
+          <h4>Phone</h4>
+          <p>0821 -1988 - 3246</p>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="contact-item"data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+        <div class="contact-item-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="white" d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
+          </svg>
+        </div>
+        <div class="contact-item-detail">
+          <h4>Email</h4>
+          <p>maedi100kc@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<!-- footer dark mode -->
+<section class="footer bg-blue-dark text-light py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      
+      <div class="col-lg-4 d-flex flex-column align-items-center text-center">
+        <!-- Profil -->
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <img src="./asset/Gambar WhatsApp 2025-03-10 pukul 20.39.55_e165f00b.jpg" width="70" height="70" class="rounded-circle" alt="Profil" data-aos="fade-up" data-aos-duration="1000" />
+          <h5 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"class="fw-bold mb-0"></h5>
+        </div>
+
+        <!-- Deskripsi -->
+        <p data-aos="fade-up" data-aos-duration="1000" class="lh-lg opacity-75 mb-4 px-lg-3">
+          Pemula di dunia web development yang juga menguasai data entry dan visualisasi data. Semangat belajar hal baru dan berbagi solusi digital bermanfaat.
+        </p>
+
+        <!-- Social Media -->
+        <div class="d-flex gap-3 fs-4">
+          <a data-aos="fade-up" data-aos-duration="1000" href="#" class="text-light social-icon"><i class="bi bi-facebook"></i></a>
+          <a data-aos="fade-up" data-aos-duration="1000" href="https://www.instagram.com/maediefendi" class="text-light social-icon"><i class="bi bi-instagram"></i></a>
+          <a data-aos="fade-up" data-aos-duration="1000" href="https://www.linkedin.com/in/maedi-efendi-9734b0333" class="text-light social-icon"><i class="bi bi-linkedin"></i></a>
+          <a data-aos="fade-up" data-aos-duration="1000" href="https://github.com/maediefendi" class="text-light social-icon"><i class="bi bi-github"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary my-4" />
+
+    <!-- Copyright -->
+    <footer class="bg-blue-900 text-gray-200 py-6 text-center rounded">
+      <div class="space-y-2">
+        <p class="text-sm mb-0">
+          &copy; <span id="year"></span> <span class="font-semibold text-white">MyWebsite</span>. All rights reserved.
+        </p>
+        <p class="text-xs mb-0">
+          Crafted with <span class="text-red-500"></span> Maedi Efendi
+        </p>
+      </div>
+    </footer>
+  </div>
+</section>
+
+<!-- Bootstrap Icons CDN (pastikan sudah include di head kalau belum) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<script>
+  // Set tahun otomatis
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+<!-- Formspree submit handling -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.contact-form');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: form.method,
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          form.reset();  // Bersihkan isian form
+          // Jangan sembunyikan form, cukup tampilkan pesan sukses
+          let successMessage = form.parentNode.querySelector('.success-message');
+          if (!successMessage) {
+            successMessage = document.createElement('p');
+            successMessage.classList.add('success-message');
+            successMessage.style.color = 'green';
+            form.parentNode.appendChild(successMessage);
+          }
+          successMessage.textContent = 'Thank you! Your message has been sent.';
+        } else {
+          alert('Oops! There was a problem submitting your form');
+        }
+      })
+      .catch(error => {
+        alert('Oops! There was a problem submitting your form');
+      });
+    });
+  });
+</script>
+
+
+</html>
