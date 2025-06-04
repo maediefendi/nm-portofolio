@@ -30,7 +30,11 @@ header video {
 }
 
 .navbar-toggler {
-  margin-right: 10px; /* Jarak tombol burger dari tepi kanan */
+  margin-right: 12px; /* Jarak tombol burger dari tepi kanan */
+  background-color: white; /* Atur warna tombol saat belum dibuka */
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
     
@@ -245,13 +249,6 @@ header video {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   border-color: #0a3d62; /* Bisa disesuaikan warnanya */
 }
-/* Normal appearance */
-.navbar-toggler {
-  background-color: white; /* Atur warna tombol saat belum dibuka */
-  border: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
 
 /* Saat navbar dibuka, ubah jadi transparan */
 .navbar-toggler.active {
@@ -328,7 +325,7 @@ header video {
         <img src="./asset/Gambar WhatsApp 2025-03-10 pukul 20.39.55_e165f00b.jpg" alt="Logo" width="40" height="40" class="rounded-circle me-2" />
         Maedi Efendi
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
