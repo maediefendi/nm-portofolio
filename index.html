@@ -13,6 +13,25 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
 
+    body {
+  overflow-x: hidden;
+}
+
+header {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+header video {
+  object-fit: cover;
+  z-index: -1;
+}
+
+.navbar-toggler {
+  margin-right: 10px; /* Jarak tombol burger dari tepi kanan */
+}
 
     
     html {
@@ -332,9 +351,10 @@
   <div class="layar-penuh overflow-hidden" id="home">
     <header>
       <div class="overlay"></div>
-      <video autoplay muted loop class="position-absolute w-100 h-100">
-        <source src="./asset/lv_0_20250525093917.mp4" type="video/mp4" />
-      </video>
+      <video autoplay muted loop class="position-absolute top-0 start-0 w-100 h-100">
+  <source src="./asset/lv_0_20250525093917.mp4" type="video/mp4" />
+</video>
+
       <div class="intro">
         <h3 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">"Menyatukan Desain dan Logika dalam Kode."</h3>
         <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Sebagai Front-End Developer, saya mengubah desain menjadi antarmuka interaktif dan responsif. Dengan keahlian di HTML, CSS, JavaScript, React, saya fokus menciptakan pengalaman pengguna yang estetis, intuitif, dan optimal di berbagai perangkat.
