@@ -328,6 +328,23 @@ header video {
   transition: background-color 0.3s ease;
 }
 
+.resume-btn {
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 6px 16px;
+  color: white !important;
+  transition: all 0.4s ease;
+  font-weight: 500;
+}
+
+.resume-btn:hover {
+  background-color: white;
+  color: #0d6efd !important; /* atau gunakan warna biru khas Bootstrap */
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+
 .contact-form button:hover {
   background-color: #07406d;
 }
@@ -362,6 +379,8 @@ header video {
   transform: scale(1.1);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
 }
+
+
 
 @keyframes pop-in {
   from {
@@ -421,6 +440,13 @@ header video {
           <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item">
+            <a class="nav-link resume-btn" 
+              href="./asset/cv.maedi.pdf" 
+              target="_blank">
+              Resume
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -495,7 +521,7 @@ header video {
 <!-- Portofolio -->
 
 <!-- Portfolio -->
-<section id="portfolio" class="py-5 portfolio-section">
+<section id="portfolio" class="py-5 portfolio-section bg-light">
   <div class="container text-center">
     <h1 data-aos="fade-up" data-aos-duration="1000" class="mb-4 fw-bold">Portfolio</h1>
     <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="mb-5">
@@ -545,15 +571,23 @@ header video {
 
 
   <!-- Experience -->
-<section id="experience" class="bg-light">
+<section id="experience" class="py-5">
   <div class="container text-center py-5">
     <h1 data-aos="fade-up" data-aos-duration="1000" class="mb-4 fw-bold">Experience</h1>
-
+    
     <div class="row justify-content-center">
       <div class="col-md-8 bg-light p-4 rounded shadow">
-        <h4 class="mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"class="fw-bold">Data Entry Staff – CV. Kahe Group</h4>
-        <p class="mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"class="text-muted mb-2">Juli 2024 – Juli 2025</p>
-        <p class="mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"class="lh-lg">
+        <img 
+          src="asset/c10dfea15a45dd060938f68fc75c69cd.webp" 
+          alt="Kahe Group Logo"
+          class="img-fluid mb-4"
+          style="max-width: 100px; height: auto;" 
+          data-aos="fade-up" 
+          data-aos-duration="1000"
+        >
+        <h4 class="mb-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="mb-4 fw-bold">Data Entry Staff – CV. Kahe Group</h4>
+        <p class="mb-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"class="text-muted mb-2">Juli 2024 – Juli 2025</p>
+        <p class="mb-0" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"class="lh-lg">
           Bertanggung jawab dalam menginput data menggunakan Microsoft Excel dan Google Sheets, memastikan ketelitian dan kecepatan dalam pengolahan data. Bekerja sama dengan tim analis untuk menyusun laporan sederhana, serta terbiasa bekerja di bawah tekanan dengan tetap menjaga akurasi data.
         </p>
       </div>
@@ -638,10 +672,10 @@ header video {
           <h5 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"class="fw-bold mb-0"></h5>
         </div>
 
-        <!-- Deskripsi -->
+        <!-- Deskripsi
         <p data-aos="fade-up" data-aos-duration="1000" class="lh-lg opacity-75 mb-4 px-lg-3">
           Pemula di dunia web development yang juga menguasai data entry dan visualisasi data. Semangat belajar hal baru dan berbagi solusi digital bermanfaat.
-        </p>
+        </p> -->
 
         <!-- Social Media -->
         <div class="d-flex gap-3 fs-4">
