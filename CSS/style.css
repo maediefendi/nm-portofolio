@@ -1,0 +1,382 @@
+  body {
+  overflow-x: hidden;
+}
+
+header {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+header video {
+  object-fit: cover;
+  z-index: -1;
+}
+
+.navbar-toggler {
+  margin-right: 12px; /* Jarak tombol burger dari tepi kanan */
+  background-color: white; /* Atur warna tombol saat belum dibuka */
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+    
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .layar-penuh {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    video {
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .intro {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      text-align: center;
+      color: white;
+      max-width: 700px;
+    }
+
+    .tombol {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      background: #0a3d62;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    .navbar-nav .nav-link {
+      color: white !important;
+      font-weight: 500;
+    }
+    section.quote {
+    background: url('/asset/glowing-blue-sphere-held-by-human-hand-generated-by-ai.jpg') no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-style: italic;
+    padding: 100px;
+    }
+    #contact {
+  padding: 3rem;
+}
+
+
+.contact.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+}
+
+.contact-left {
+  padding: 1rem;
+}
+
+.contact-form div {
+  margin-bottom: 1.4rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1.3rem;
+  font-family: "Roboto", sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #f9f9f9;
+  color: #333;
+  resize: none;
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: #9d9fa1;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border: 1.5px solid #0a3d62;
+}
+
+.btn-submit {
+  padding: 0.75rem 1.5rem;
+  width: 100%;
+  background-color: #0a3d62;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-submit:hover {
+  background-color: #002036;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 1.5rem;
+}
+
+.contact-item-icon {
+  margin-right: 1rem;
+  background: #0a3d62;
+  width: 53px;
+  height: 53px;
+  border-radius: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-item-detail h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.contact-item-detail p {
+  margin: 0.25rem 0 0 0;
+}
+.footer {
+    margin-top: 100px;
+    padding-bottom: 20px;
+}
+
+.footer-box .row .col:nth-child(2) a {
+    opacity: 75%;
+}
+
+.footer-box .row .col:nth-child(2) a:hover {
+    opacity: 100%;
+}
+.bg-blue-dark {
+  background-color: #0a3d62; /* biru navy gelap */
+}
+.contact-item-icon {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.contact-item-icon:hover {
+  animation: shake 0.5s ease infinite;
+}
+.bi-facebook:hover { color: #044ff3; }
+.bi-instagram:hover { color: #044ff3; }
+.bi-linkedin:hover { color: #044ff3; }
+.bi-github:hover { color: #044ff3; }
+
+.education {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.education:hover {
+  transform: translateY(-5px); /* Naik sedikit */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Bayangan lebih tebal */
+  border-color: #0a3d62; /* Garis border biru (Bootstrap primary) */
+}
+.education img {
+  transition: transform 0.3s ease;
+}
+
+.education:hover img {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+/* Style dasar untuk card experience */
+#experience .col-md-8 {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 2px solid transparent;
+}
+
+/* Efek hover */
+#experience .col-md-8:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: #0a3d62; /* Bisa disesuaikan warnanya */
+}
+
+/* Saat navbar dibuka, ubah jadi transparan */
+.navbar-toggler.active {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.navbar-toggler.active .navbar-toggler-icon {
+  background-image: none; /* sembunyikan ikon default */
+}
+
+#portfolio .btn {
+  background-color: #0a3d62; /* warna oranye contoh */
+  color: white;
+  border: none;
+}
+
+#portfolio .btn:hover {
+  background-color: #000c14; /* warna saat hover */
+}
+
+#portfolio .btn {
+  background-color: #0a3d62; /* warna oranye contoh */
+  color: white;
+  border: none;
+}
+
+.portfolio-section .card:hover {
+  border: 2px solid #0a3d62;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.portfolio-section img {
+  transition: transform 0.3s ease;
+}
+
+.portfolio-section:hover img {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fafafa;
+  resize: vertical;
+}
+
+.contact-form textarea {
+  min-height: 180px;
+}
+
+.contact-form button {
+  background-color: #0a3d62;
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #07406d;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 999;
+  text-decoration: none;
+}
+
+.wa-button {
+  background-color: #25D366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  animation: pop-in 0.5s ease;
+}
+
+.wa-button img {
+  width: 30px;
+  height: 30px;
+}
+
+.wa-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes pop-in {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* Tambahkan garis bawah di setiap item menu hanya di tampilan mobile */
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* garis aris */
+    padding: 3px 0;
+  }
+
+  .navbar-nav .nav-link {
+    color: white;
+  }
+}
+
+
+
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-3px); }
+}
