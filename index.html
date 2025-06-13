@@ -18,6 +18,11 @@
   overflow-x: hidden;
 }
 
+ #role {
+    white-space: nowrap;
+    overflow: hidden;
+    /* Hapus garis tik di sini */
+  }
 header {
   position: relative;
   width: 100vw;
@@ -268,7 +273,7 @@ header video {
 }
 
 #portfolio .btn:hover {
-  background-color: #000c14; /* warna saat hover */
+  background-color: #044ff3; /* warna saat hover */
 }
 
 #portfolio .btn {
@@ -346,7 +351,7 @@ header video {
 
 
 .contact-form button:hover {
-  background-color: #07406d;
+  background-color: #044ff3;
 }
 
 .whatsapp-float {
@@ -407,6 +412,33 @@ header video {
   color: #ffffff;
   line-height: 1.8;
 }
+
+.tombol {
+  color: white; /* warna teks normal */
+  background-color: #0a3d62; /* warna latar normal */
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.tombol:hover {
+  background-color: #044ff3; /* warna latar saat hover */
+  color: #fff; /* warna teks saat hover */
+}
+
+#portfolio .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 2px solid transparent;
+}
+
+#portfolio .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: #0a3d62;
+}
+
+
 
 
 @keyframes pop-in {
@@ -470,7 +502,7 @@ header video {
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           <li class="nav-item">
             <a class="nav-link resume-btn" 
-              href="./asset/cv.maedi.pdf" 
+              href="./asset/Curiculum Vitae Maedi.pdf" 
               target="_blank">
               Resume
             </a>
@@ -491,10 +523,12 @@ header video {
 
       <div class="intro">
         <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"class="welcome">— WELCOME TO MY DIGITAL WORLD</p>
-    <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Hi, I'm <span class="name-highlight">Maedi Efendi</span></h1>
-    <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">I'm a Frontend Developer</h2>
+    <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Hi, I'm <span class="name-highlight">Maedi</span></h1>
+   <h2 id="changing-text" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+  I'm a <span id="role"></span>
+</h2>
     <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"class="description">
-      Passionate about building beautiful and responsive websites that combine design with functionality. Let's create something great together.
+      Passionate about crafting responsive user interfaces, ensuring accurate and efficient data processing, and transforming complex datasets into clear, impactful visual insights.
     </p>
 
  <!-- <p class="welcome">— WELCOME TO MY DIGITAL WORLD</p>
@@ -510,12 +544,12 @@ header video {
   
 
   <!-- About -->
-  <section id="about" class="bg-light">
+  <section id="about" class="bg-lightS">
   <div class="container text-center">
     <img src="./asset/customer-service.png" alt="About Icon" style="width: 120px;" class="img-fluid mb-4" data-aos="fade-up" data-aos-duration="1000" />
     <h1 data-aos="fade-up" data-aos-duration="1000" class="fw-bold">About</h1>
     <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-      Individu dengan pengalaman 1 tahun dalam pengolahan dan pengelolaan data, serta kemampuan dalam memvisualisasikan data untuk keperluan analisis. Mahir dalam menggunakan berbagai perangkat lunak pengolahan data seperti Microsoft Excel dan Google Sheets. Memiliki tingkat ketelitian dan kecepatan yang tinggi dalam penginputan data, serta terbiasa bekerja di bawah tekanan dengan tetap menjaga akurasi pada data dalam jumlah besar. Mempunyai keterampilan komunikasi yang baik dan mampu bekerja secara mandiri maupun dalam tim.
+      Saya adalah seorang profesional pemula dengan pengalaman satu tahun dalam pengolahan, pengelolaan, dan visualisasi data untuk keperluan analisis. Mahir menggunakan Microsoft Excel dan Google Sheets, saya dikenal teliti, cepat dalam penginputan data, dan mampu menjaga akurasi meskipun di bawah tekanan. Selain itu, saya menguasai pengembangan frontend dasar menggunakan HTML, CSS, dan JavaScript. Saya memiliki kemampuan komunikasi yang baik, mampu bekerja secara mandiri maupun dalam tim, dan memiliki aspirasi untuk terus berkembang di bidang data dan teknologi informasi guna memberikan solusi yang berdampak.
     </p>
   </div>
 </section>
@@ -585,7 +619,7 @@ header video {
           <div class="card-body">
             <h5 class="card-title fw-bold">Website Profil Pribadi</h5>
             <p class="card-text">Website statis responsif yang dibangun menggunakan HTML, CSS, dan Bootstrap untuk menampilkan informasi profil dan kontak.</p>
-            <a href="https://maediefendi.github.io/nm-portofolio/" target="_blank" class="btn btn-primary mt-2">Lihat Proyek</a>
+            <a href="https://maediefendi.github.io/portfolio-maedi/" target="_blank" class="btn btn-primary mt-2">Lihat Proyek</a>
           </div>
         </div>
       </div>
@@ -742,6 +776,36 @@ header video {
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
+<script>
+  const roles = ["Frontend Developer", "Data Entry Specialist", "Data Visualization"];
+  const roleElement = document.getElementById("role");
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function typeEffect() {
+    const currentRole = roles[roleIndex];
+    const displayedText = currentRole.substring(0, charIndex);
+
+    roleElement.textContent = displayedText;
+
+    if (!isDeleting && charIndex < currentRole.length) {
+      charIndex++;
+      setTimeout(typeEffect, 100);
+    } else if (isDeleting && charIndex > 0) {
+      charIndex--;
+      setTimeout(typeEffect, 50);
+    } else {
+      isDeleting = !isDeleting;
+      if (!isDeleting) {
+        roleIndex = (roleIndex + 1) % roles.length;
+      }
+      setTimeout(typeEffect, 1000);
+    }
+  }
+
+  typeEffect();
+</script>
 
 
 
