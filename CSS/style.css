@@ -1,7 +1,12 @@
-  body {
+ body {
   overflow-x: hidden;
 }
 
+ #role {
+    white-space: nowrap;
+    overflow: hidden;
+    /* Hapus garis tik di sini */
+  }
 header {
   position: relative;
   width: 100vw;
@@ -252,7 +257,7 @@ header video {
 }
 
 #portfolio .btn:hover {
-  background-color: #000c14; /* warna saat hover */
+  background-color: #044ff3; /* warna saat hover */
 }
 
 #portfolio .btn {
@@ -312,8 +317,25 @@ header video {
   transition: background-color 0.3s ease;
 }
 
+.resume-btn {
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 6px 16px;
+  color: white !important;
+  transition: all 0.4s ease;
+  font-weight: 500;
+}
+
+.resume-btn:hover {
+  background-color: white;
+  color: #0d6efd !important; /* atau gunakan warna biru khas Bootstrap */
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+
 .contact-form button:hover {
-  background-color: #07406d;
+  background-color: #044ff3;
 }
 
 .whatsapp-float {
@@ -346,6 +368,78 @@ header video {
   transform: scale(1.1);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
 }
+
+  .nav-link {
+    color: white;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #0d6efd !important;
+  }
+
+.intro {
+  text-align: center;
+  margin: 60px auto;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.intro h3 {
+  font-size: 28px;
+  color: #00ffcc;
+  margin-bottom: 20px;
+}
+
+.intro p {
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 1.8;
+}
+
+.tombol {
+  color: white; /* warna teks normal */
+  background-color: #0a3d62; /* warna latar normal */
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.tombol:hover {
+  background-color: #044ff3; /* warna latar saat hover */
+  color: #fff; /* warna teks saat hover */
+}
+
+#portfolio .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 2px solid transparent;
+}
+
+#portfolio .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: #0a3d62;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 0 20px;
+}
+
+/* Opsional: styling tambahan di mobile */
+@media (max-width: 768px) {
+  .intro {
+    padding: 0 16px;
+  }
+}
+
+
 
 @keyframes pop-in {
   from {
